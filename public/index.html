@@ -14,7 +14,17 @@
         <ul>
             <li v-for="todo in todos">
                 <span>{{todo.name}}</span>
-                <span>{{todo.priority}} Priority</span>
+                <span v-if="todo.priority === 'Low'">🟢</span>
+                <span v-if="todo.priority === 'Medium'">🟡</span>
+                <span v-if="todo.priority === 'High'">🔴</span>
+                <span>
+                    <label for="priority">Priority:</label>
+                    <select name="priority" id="priority" v-model="todo.priority">
+                        <option value="Low">Low</option>
+                        <option value="Medium">Medium</option>
+                        <option value="High">High</option>
+                    </select>
+                </span>
             </li> 
         </ul>
 
@@ -34,7 +44,7 @@
             </fieldset>
             
             <input type="submit" value="Add">
-            
+
         </form>
 
     </div>
