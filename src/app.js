@@ -5,9 +5,10 @@ document.addEventListener("DOMContentLoaded", () => {
         el: "#app",
         data: {
             todos: [
-                "Finish Homework",
-                "Make Dinner",
-                "Eat Dinner"
+                {name: "Finish Homework", priority: "High"},
+                {name: "Make Dinner", priority: "Medium"},
+                {name: "Eat Dinner", priority: "High"},
+                {name: "Wash Dishes", priority: "Low"}
             ],
             newTodo: ""
         },

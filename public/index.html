@@ -12,7 +12,7 @@
     <div id="app">
         
         <ul>
-            <li v-for="todo in todos">{{ todo }}</li> 
+            <li v-for="todo in todos">{{ todo.name }}</li> 
         </ul>
 
         <form v-on:submit.prevent="addTask">
@@ -20,7 +20,7 @@
             <input type="text" id="new-todo" v-model="newTodo">
             <input type="submit" value="Add">
         </form>
-        
+
     </div>
 
 </body>
