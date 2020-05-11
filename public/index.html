@@ -10,6 +10,10 @@
 <body>
 
     <div id="app">
+
+        <h1>todoVue</h1>
+
+        <h2>Current Tasks</h2>
         
         <ul>
             <li v-for="todo in todos">
@@ -28,23 +32,27 @@
             </li> 
         </ul>
 
-        <form v-on:submit.prevent="addTask">
-            
-            <label for="new-todo">Add Task:</label>
-            <input type="text" id="new-todo" v-model="newTodoName">
-            
-            <fieldset>
-                <legend>Priority</legend> 
-                <input type="radio" id="low" value="Low" v-model="newTodoPriority">
-                <label for="low">Low</label>
-                <input type="radio" id="medium" value="Medium" v-model="newTodoPriority">
-                <label for="medium">Medium</label>
-                <input type="radio" id="high" value="High" v-model="newTodoPriority">
-                <label for="high">High</label>
-            </fieldset>
-            
-            <input type="submit" value="Add">
+        <h2>Add New Task</h2>
 
+        <form v-on:submit.prevent="addTask">
+            <table>
+                <tr>
+                    <th><label for="new-todo-name">Name</label></th>
+                    <th>Priority</th>
+                </tr>
+                <tr>
+                    <td><input type="text" id="new-todo-name" v-model="newTodoName"></td>
+                    <td>
+                        <input type="radio" id="low" value="Low" v-model="newTodoPriority">
+                        <label for="low">Low</label>
+                        <input type="radio" id="medium" value="Medium" v-model="newTodoPriority">
+                        <label for="medium">Medium</label>
+                        <input type="radio" id="high" value="High" v-model="newTodoPriority">
+                        <label for="high">High</label>
+                    </td>
+                    <td><input type="submit" value="Add"></td>
+                </tr>
+            </table>
         </form>
 
     </div>
