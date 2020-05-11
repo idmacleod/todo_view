@@ -15,5 +15,11 @@
         </ul>
     </div>
 
+    <form v-on:submit.prevent="addTask">
+        <label for="new-todo">Add Task:</label>
+        <input type="text" id="new-todo">
+        <input type="submit" value="Add">
+    </form>
+
 </body>
 </html>
