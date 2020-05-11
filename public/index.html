@@ -10,16 +10,18 @@
 <body>
 
     <div id="app">
+        
         <ul>
             <li v-for="todo in todos">{{ todo }}</li> 
         </ul>
-    </div>
 
-    <form v-on:submit.prevent="addTask">
-        <label for="new-todo">Add Task:</label>
-        <input type="text" id="new-todo">
-        <input type="submit" value="Add">
-    </form>
+        <form v-on:submit.prevent="addTask">
+            <label for="new-todo">Add Task:</label>
+            <input type="text" id="new-todo" v-model="newTodo">
+            <input type="submit" value="Add">
+        </form>
+        
+    </div>
 
 </body>
 </html>
