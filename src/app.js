@@ -10,12 +10,17 @@ document.addEventListener("DOMContentLoaded", () => {
                 {name: "Eat Dinner", priority: "High"},
                 {name: "Wash Dishes", priority: "Low"}
             ],
-            newTodo: ""
+            newTodoName: "",
+            newTodoPriority: "Low"
         },
         methods: {
             addTask: function() {
-                this.todos.push(this.newTodo);
-                this.newTodo = "";
+                this.todos.push({
+                    name: this.newTodoName,
+                    priority: this.newTodoPriority
+                });
+                this.newTodoName = "";
+                this.newTodoPriority = "Low";
             }
         }
     });

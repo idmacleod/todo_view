@@ -12,13 +12,29 @@
     <div id="app">
         
         <ul>
-            <li v-for="todo in todos">{{ todo.name }}</li> 
+            <li v-for="todo in todos">
+                <span>{{todo.name}}</span>
+                <span>{{todo.priority}} Priority</span>
+            </li> 
         </ul>
 
         <form v-on:submit.prevent="addTask">
+            
             <label for="new-todo">Add Task:</label>
-            <input type="text" id="new-todo" v-model="newTodo">
+            <input type="text" id="new-todo" v-model="newTodoName">
+            
+            <fieldset>
+                <legend>Priority</legend> 
+                <input type="radio" id="low" value="Low" v-model="newTodoPriority">
+                <label for="low">Low</label>
+                <input type="radio" id="medium" value="Medium" v-model="newTodoPriority">
+                <label for="medium">Medium</label>
+                <input type="radio" id="high" value="High" v-model="newTodoPriority">
+                <label for="high">High</label>
+            </fieldset>
+            
             <input type="submit" value="Add">
+            
         </form>
 
     </div>
