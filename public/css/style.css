@@ -1,0 +1,38 @@
+body {
+    font-family: 'Roboto Mono', monospace;
+}
+
+h1, h2 {
+    font-family: 'Major Mono Display', monospace;
+}
+
+ul {
+    list-style: none;
+}
+
+table {
+    justify-content: center;
+    border-collapse: collapse;
+    padding: 0.5rem;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 0.25rem 1rem;
+}
+
+input, select {
+    font-family: inherit;
+    font-size: 100%;
+}
+
+input[type="submit"] {
+    all: unset;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover, input[type="submit"]:active {
+    background-color: black;
+    color: white;
+}
+

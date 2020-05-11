@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Major+Mono+Display&display=swap" rel="stylesheet">
     <script src="./js/bundle.js"></script>
     <title>To-Do List in Vue</title>
 </head>
@@ -11,16 +12,12 @@
 
     <div id="app">
 
-        <h1>todoVue</h1>
+        <h1>todo_Vue</h1>
 
-        <h2>Current Tasks</h2>
+        <h2>cuRRent_tasks</h2>
         
         <ul>
             <li v-for="todo in todos">
-                <span>{{todo.name}}</span>
-                <span v-if="todo.priority === 'Low'">🟢</span>
-                <span v-if="todo.priority === 'Medium'">🟡</span>
-                <span v-if="todo.priority === 'High'">🔴</span>
                 <span>
                     <label for="priority">Priority:</label>
                     <select name="priority" id="priority" v-model="todo.priority">
@@ -29,10 +26,16 @@
                         <option value="High">High</option>
                     </select>
                 </span>
+                <span>
+                    <span v-if="todo.priority === 'Low'">🟢</span>
+                    <span v-if="todo.priority === 'Medium'">🟡</span>
+                    <span v-if="todo.priority === 'High'">🔴</span>
+                    {{todo.name}}
+                </span>
             </li> 
         </ul>
 
-        <h2>Add New Task</h2>
+        <h2>Add_neW_tAsk</h2>
 
         <form v-on:submit.prevent="addTask">
             <table>
